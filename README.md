@@ -177,3 +177,9 @@ docker run -v $(pwd):/app --env-file .env mcp-server-serper
 ```
 
 Note: Make sure to replace `your_api_key_here` with your actual Serper API key.
+
+## Serper-compatible endpoints
+
+Support any Serper.dev-compatible endpoint (like litescrape.com, serpbase.dev, serpensapi.org, and others).
+
+Set `SERPER_BASE_URL` in the MCP server environment to the provider base URL; the default is `https://google.serper.dev`. The server appends the existing Serper API routes and continues using `SERPER_API_KEY` for authentication.

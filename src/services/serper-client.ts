@@ -28,9 +28,9 @@ export class SerperClient implements ISerperClient {
    * @param apiKey - Serper API key for authentication
    * @param baseUrl - Base URL for Serper API (optional)
    */
-  constructor(apiKey: string, baseUrl: string = "https://google.serper.dev") {
+  constructor(apiKey: string, baseUrl: string = process.env.SERPER_BASE_URL || "https://google.serper.dev") {
     this.apiKey = apiKey;
-    this.baseUrl = baseUrl;
+    this.baseUrl = baseUrl.replace(/\/+$/, "");
   }
 
   /**
